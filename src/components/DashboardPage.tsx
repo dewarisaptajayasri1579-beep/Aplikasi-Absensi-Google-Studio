@@ -235,7 +235,7 @@ export default function DashboardPage({
             </h3>
             
             {/* Minimalist Late Table */}
-            <div className="overflow-x-auto">
+            <div className="hidden md:block overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="border-b border-[#F0F4F8] text-[#66738D] text-[11px] font-extrabold tracking-wider uppercase">
@@ -266,6 +266,32 @@ export default function DashboardPage({
                 </tbody>
               </table>
             </div>
+
+            {/* Cards (Mobile) */}
+            <div className="grid grid-cols-1 gap-3 mt-4 md:hidden">
+              {LATE_EMPLOYEES_TODAY.map((emp, i) => (
+                <div key={i} className="p-3 rounded-xl border border-[#E3EAF3] bg-[#F8FAFD] space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full overflow-hidden border border-[#DCE4F0] bg-[#EEF5FF] shrink-0">
+                      <img src={emp.avatar} alt={emp.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    </div>
+                    <div>
+                      <p className="text-[#0B1F44] text-[13px] font-extrabold leading-tight">{emp.name}</p>
+                      <p className="text-[#66738D] text-[11px] font-semibold mt-0.5">{emp.role}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between pt-3 border-t border-[#DCE4F0]">
+                    <div>
+                      <p className="text-[10px] font-extrabold text-[#66738D] mb-0.5">JAM MASUK</p>
+                      <p className="text-[12px] font-extrabold text-[#0B1F44]">{emp.time}</p>
+                    </div>
+                    <span className="inline-block px-2.5 py-1 rounded-[6px] bg-[#FDECEC] text-[#EF4444] text-[11px] font-bold">
+                      {emp.duration}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <button
@@ -285,7 +311,7 @@ export default function DashboardPage({
             </h3>
 
             {/* Recent Attendance Table */}
-            <div className="overflow-x-auto">
+            <div className="hidden md:block overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="border-b border-[#F0F4F8] text-[#66738D] text-[11px] font-extrabold tracking-wider uppercase">
@@ -324,6 +350,40 @@ export default function DashboardPage({
                   })}
                 </tbody>
               </table>
+            </div>
+
+            {/* Cards (Mobile) */}
+            <div className="grid grid-cols-1 gap-3 mt-4 md:hidden">
+              {RECENT_ACTIVITIES.map((act, i) => {
+                const statusColors: Record<string, string> = {
+                  'Hadir': 'bg-[#EAFBF4] text-[#10B981]',
+                  'Terlambat': 'bg-[#FDECEC] text-[#EF4444]',
+                  'Pulang': 'bg-[#FFF4DF] text-[#F59E0B]',
+                };
+                const badgeClass = statusColors[act.status] || 'bg-slate-100 text-slate-600';
+                return (
+                  <div key={i} className="p-3 rounded-xl border border-[#E3EAF3] bg-[#F8FAFD] space-y-3">
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full overflow-hidden border border-[#DCE4F0] bg-[#EEF5FF] shrink-0">
+                          <img src={act.avatar} alt={act.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                        </div>
+                        <div>
+                          <p className="text-[#0B1F44] text-[13px] font-extrabold leading-tight">{act.name}</p>
+                          <p className="text-[#66738D] text-[11px] font-semibold mt-0.5">{act.activity}</p>
+                        </div>
+                      </div>
+                      <span className={`inline-block px-2.5 py-1 rounded-[6px] text-[11px] font-bold shrink-0 ${badgeClass}`}>
+                        {act.status}
+                      </span>
+                    </div>
+                    <div className="pt-3 border-t border-[#DCE4F0]">
+                      <p className="text-[10px] font-extrabold text-[#66738D] mb-0.5">WAKTU</p>
+                      <p className="text-[12px] font-extrabold text-[#0B1F44]">{act.time}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 

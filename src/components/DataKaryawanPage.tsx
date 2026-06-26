@@ -242,7 +242,8 @@ export default function DataKaryawanPage({ searchQuery }: DataKaryawanPageProps)
 
       {/* Employee List Table */}
       <div className="bg-white rounded-[14px] border border-[#E3EAF3] shadow-[0_6px_20px_rgba(15,31,61,0.03)] overflow-hidden">
-        <div className="overflow-x-auto">
+        {/* Table (Desktop) */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full text-left border-collapse min-w-[700px]">
             <thead>
               <tr className="border-b border-[#F0F4F8] bg-[#FAFBFD] text-[#66738D] text-[11px] font-extrabold tracking-wider uppercase">
@@ -326,6 +327,48 @@ export default function DataKaryawanPage({ searchQuery }: DataKaryawanPageProps)
               )}
             </tbody>
           </table>
+        </div>
+
+        {/* Cards (Mobile) */}
+        <div className="grid grid-cols-1 gap-4 p-4 md:hidden">
+          {paginatedEmployees.map((emp) => (
+            <div key={emp.id} className="p-4 rounded-xl border border-[#E3EAF3] bg-[#F8FAFD] space-y-3">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full overflow-hidden border border-[#DCE4F0] bg-[#EEF5FF] shrink-0">
+                    <img src={emp.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face'} alt={emp.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <p className="text-[14px] font-extrabold text-[#0B1F44] leading-tight">{emp.name}</p>
+                    <p className="text-[11px] font-semibold text-[#66738D] mt-0.5">{emp.role}</p>
+                  </div>
+                </div>
+                <span className={`inline-flex px-2 py-1 rounded-[6px] text-[10px] font-bold uppercase tracking-wider ${emp.status === 'Aktif' ? 'bg-[#EAFBF4] text-[#10B981]' : 'bg-[#FDECEC] text-[#EF4444]'}`}>
+                  {emp.status}
+                </span>
+              </div>
+              
+              <div className="flex items-center justify-between pt-3 border-t border-[#DCE4F0]">
+                <div>
+                  <p className="text-[10px] font-extrabold text-[#66738D] mb-0.5">NOMOR HP</p>
+                  <p className="text-[13px] font-extrabold text-[#0B1F44]">{emp.phone}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button onClick={() => handleOpenEditModal(emp)} className="w-8 h-8 rounded-[6px] border border-[#DCE4F0] bg-white text-gray-500 hover:text-[#0F5FEA] hover:bg-slate-50 flex items-center justify-center transition-colors cursor-pointer">
+                    <Edit2 className="w-3.5 h-3.5" />
+                  </button>
+                  <button onClick={() => setEmployeeToDelete(emp)} className="w-8 h-8 rounded-[6px] border border-[#FDECEC] bg-white text-gray-400 hover:text-red-500 hover:bg-red-50 flex items-center justify-center transition-colors cursor-pointer">
+                    <Trash2 className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+          {paginatedEmployees.length === 0 && (
+            <div className="py-8 text-center text-gray-400 font-semibold text-[13px]">
+              Tidak ada data karyawan yang sesuai filter atau pencarian.
+            </div>
+          )}
         </div>
 
         {/* Pagination Controls Footer */}

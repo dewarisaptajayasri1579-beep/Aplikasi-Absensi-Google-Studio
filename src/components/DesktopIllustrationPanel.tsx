@@ -15,7 +15,7 @@ export default function DesktopIllustrationPanel() {
             id="branding-title"
             className="text-[18px] font-bold text-[#0B1F44] tracking-tight leading-tight"
           >
-            Absensi Karyawan
+            Seven Smarts Indonesia
           </h2>
           <p id="branding-subtitle" className="text-[13px] font-medium text-[#66738D] mt-0.5">
             Kelola kehadiran, tingkatkan produktivitas

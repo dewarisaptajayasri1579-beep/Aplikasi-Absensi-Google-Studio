@@ -87,7 +87,7 @@ export default function PengaturanPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 text-[12px] font-bold">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[12px] font-bold">
               <div>
                 <label className="text-[#66738D] text-[10px] block uppercase font-extrabold tracking-wider mb-1.5">Jam Masuk (Check-in)</label>
                 <input
@@ -143,7 +143,7 @@ export default function PengaturanPage() {
             </div>
 
             {/* List of checkboxes styled neatly */}
-            <div className="grid grid-cols-2 gap-3 pt-1 text-[13px] font-bold text-[#0B1F44]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-[13px] font-bold text-[#0B1F44]">
               {daysOfWeek.map((day) => {
                 const isChecked = settings.hariKerja?.includes(day);
                 return (

@@ -54,7 +54,7 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
                 id="card-title"
                 className="text-[36px] font-bold text-[#0B1F44] tracking-tight leading-tight"
               >
-                Absensi Karyawan
+                Seven Smarts Indonesia
               </h1>
               <p
                 id="card-subtitle"
@@ -96,7 +96,7 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
             id="mobile-title"
             className="text-[32px] font-bold text-[#0B1F44] tracking-tight mt-5 leading-none"
           >
-            Absensi Karyawan
+            Seven Smarts Indonesia
           </h1>
           <p
             id="mobile-subtitle"

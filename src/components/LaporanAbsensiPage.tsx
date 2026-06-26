@@ -182,7 +182,8 @@ export default function LaporanAbsensiPage({ searchQuery }: LaporanAbsensiPagePr
 
       {/* Main Attendance Table */}
       <div className="bg-white rounded-[14px] border border-[#E3EAF3] shadow-[0_6px_20px_rgba(15,31,61,0.03)] overflow-hidden">
-        <div className="overflow-x-auto">
+        {/* Table (Desktop) */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full text-left border-collapse min-w-[1000px]">
             <thead>
               <tr className="border-b border-[#F0F4F8] bg-[#FAFBFD] text-[#66738D] text-[11px] font-extrabold tracking-wider uppercase">
@@ -329,6 +330,56 @@ export default function LaporanAbsensiPage({ searchQuery }: LaporanAbsensiPagePr
               )}
             </tbody>
           </table>
+        </div>
+
+        {/* Cards (Mobile) */}
+        <div className="grid grid-cols-1 gap-4 p-4 md:hidden">
+          {filteredRecords.map(rec => (
+            <div key={rec.id} className="p-4 rounded-xl border border-[#E3EAF3] bg-[#F8FAFD] space-y-4">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full overflow-hidden border border-[#DCE4F0] bg-[#EEF5FF] shrink-0">
+                    <img src={rec.employeeAvatar || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'} alt={rec.employeeName} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  </div>
+                  <div>
+                    <p className="text-[14px] font-extrabold text-[#0B1F44] leading-tight">{rec.employeeName}</p>
+                    <p className="text-[11px] font-semibold text-[#66738D] mt-0.5">{rec.employeeRole} • {rec.date}</p>
+                  </div>
+                </div>
+                <div className="shrink-0">
+                  <span className={`inline-flex px-2 py-1 rounded-[6px] text-[10px] font-bold uppercase tracking-wider ${rec.status === 'Hadir' ? 'bg-[#EAFBF4] text-[#10B981]' : 'bg-[#FFF4DF] text-[#F59E0B]'}`}>
+                    {rec.status}
+                  </span>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-3 pt-3 border-t border-[#DCE4F0]">
+                <div>
+                  <p className="text-[10px] font-extrabold text-[#66738D] mb-1">JAM BERANGKAT</p>
+                  <p className="text-[13px] font-extrabold text-[#0B1F44] mb-2">{rec.checkInTime || '-'}</p>
+                  {rec.checkInPhoto && (
+                    <img src={rec.checkInPhoto} alt="Berangkat" className="w-12 h-16 rounded-[6px] object-cover mb-2" />
+                  )}
+                  <p className="text-[11px] text-[#66738D] mt-1">{rec.locationNameIn || 'Kantor Pusat'}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-extrabold text-[#66738D] mb-1">JAM PULANG</p>
+                  <p className="text-[13px] font-extrabold text-[#0B1F44] mb-2">{rec.checkOutTime || '-'}</p>
+                  {rec.checkOutPhoto && (
+                    <img src={rec.checkOutPhoto} alt="Pulang" className="w-12 h-16 rounded-[6px] object-cover mb-2" />
+                  )}
+                  {rec.checkOutTime && (
+                    <p className="text-[11px] text-[#66738D] mt-1">{rec.locationNameOut || 'Kantor Pusat'}</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+          {filteredRecords.length === 0 && (
+            <div className="py-8 text-center text-gray-400 font-semibold text-[13px]">
+              Tidak ada data laporan absensi yang sesuai filter.
+            </div>
+          )}
         </div>
       </div>
 
