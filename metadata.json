@@ -1,0 +1,6 @@
+{
+  "name": "Absensi Karyawan",
+  "description": "Halaman login PWA untuk aplikasi Absensi Karyawan dengan fitur presensi, pelacakan waktu, dan manajemen kehadiran.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

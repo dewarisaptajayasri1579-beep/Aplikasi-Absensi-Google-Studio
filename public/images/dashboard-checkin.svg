@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 140" width="100%" height="100%">
+  <defs>
+    <linearGradient id="checkin-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EEF5FF"/>
+      <stop offset="100%" stop-color="#DEE9FF"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle decoration -->
+  <circle cx="80" cy="70" r="50" fill="url(#checkin-bg)" />
+  <circle cx="120" cy="45" r="14" fill="#0F5FEA" opacity="0.1" />
+  <circle cx="40" cy="95" r="10" fill="#10B981" opacity="0.1" />
+
+  <!-- City Silhouette in back -->
+  <g fill="#93C5FD" opacity="0.3">
+    <rect x="50" y="50" width="12" height="40" rx="1"/>
+    <rect x="65" y="40" width="15" height="50" rx="1"/>
+    <rect x="83" y="45" width="10" height="45" rx="1"/>
+    <rect x="96" y="55" width="14" height="35" rx="1"/>
+  </g>
+
+  <!-- Person/Employee holding phone -->
+  <g transform="translate(10, 0)">
+    <!-- Body -->
+    <path d="M60 110 C60 92, 90 92, 90 110 L92 140 L58 140 Z" fill="#0F5FEA" />
+    <!-- Head -->
+    <circle cx="75" cy="72" r="11" fill="#FDBA74" />
+    <path d="M66 70 C66 61, 84 61, 84 70" fill="#1E293B" />
+    <!-- Phone -->
+    <rect x="44" y="85" width="12" height="22" rx="2" fill="#1E293B" />
+    <rect x="46" y="87" width="8" height="18" rx="1" fill="#FFFFFF" />
+    <!-- Hand holding phone -->
+    <circle cx="48" cy="100" r="4.5" fill="#FDBA74" />
+    <!-- Connection dots -->
+    <path d="M50 82 C52 74, 84 74, 94 85" fill="none" stroke="#0F5FEA" stroke-width="1.5" stroke-dasharray="3,3" />
+    <!-- Location Pin -->
+    <g transform="translate(98, 80)">
+      <circle cx="8" cy="8" r="8" fill="#FFFFFF" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
+      <path d="M8 3 C6.3 3 5 4.3 5 6 C5 8.2 8 11 8 11 C8 11 11 8.2 11 6 C11 4.3 9.7 3 8 3 Z" fill="#0F5FEA" />
+      <circle cx="8" cy="6" r="1" fill="#FFFFFF" />
+    </g>
+  </g>
+</svg>

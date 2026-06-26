@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="mobile-skyline-grad-fallback" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2EDFD" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#D6E5FC" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="m-soft-shadow-fallback" x="-10%" y="-10%" width="120%" height="120%">
+      <drop-shadow dx="0" dy="6" stdDeviation="10" flood-color="#0F1F3D" flood-opacity="0.06" />
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND: Skyline -->
+  <g fill="url(#mobile-skyline-grad-fallback)">
+    <rect x="10" y="100" width="40" height="150" rx="3" opacity="0.4"/>
+    <rect x="60" y="70" width="50" height="180" rx="4" opacity="0.4"/>
+    <rect x="120" y="110" width="35" height="140" rx="3" opacity="0.4"/>
+    <rect x="260" y="80" width="45" height="170" rx="3" opacity="0.4"/>
+    <rect x="315" y="120" width="40" height="130" rx="3" opacity="0.4"/>
+    <path d="M60 70 L85 45 L110 70 Z" opacity="0.4"/>
+
+    <!-- Mid Buildings -->
+    <rect x="35" y="130" width="40" height="120" rx="3" opacity="0.7"/>
+    <rect x="90" y="100" width="50" height="150" rx="4" opacity="0.7"/>
+    <rect x="235" y="120" width="45" height="130" rx="3" opacity="0.7"/>
+    <rect x="290" y="90" width="40" height="160" rx="4" opacity="0.7"/>
+  </g>
+
+  <!-- Ground Line -->
+  <line x1="0" y1="250" x2="400" y2="250" stroke="#DCE4F0" stroke-width="2" />
+
+  <!-- Blue Check Circle Floating on Top Left -->
+  <g transform="translate(145, 95)" filter="url(#m-soft-shadow-fallback)">
+    <circle cx="14" cy="14" r="14" fill="#0F5FEA" />
+    <path d="M8 14 L12 18 L20 10" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Blue Location Pin Floating on Top Right -->
+  <g transform="translate(250, 110)" filter="url(#m-soft-shadow-fallback)">
+    <circle cx="15" cy="15" r="15" fill="#FFFFFF" />
+    <path d="M15 7 C11.5 7 9 9.5 9 13 C9 18 15 23 15 23 C15 23 21 18 21 13 C21 9.5 18.5 7 15 7 Z" fill="#0F5FEA" />
+    <circle cx="15" cy="12" r="2.5" fill="#FFFFFF" />
+  </g>
+
+  <!-- Large Analog Clock - Left -->
+  <g transform="translate(95, 125)" filter="url(#m-soft-shadow-fallback)">
+    <circle cx="30" cy="30" r="28" fill="#FFFFFF" stroke="#0F5FEA" stroke-width="3" />
+    <line x1="30" y1="6" x2="30" y2="10" stroke="#0B1F44" stroke-width="1.5" />
+    <line x1="30" y1="54" x2="30" y2="50" stroke="#0B1F44" stroke-width="1.5" />
+    <line x1="6" y1="30" x2="10" y2="30" stroke="#0B1F44" stroke-width="1.5" />
+    <line x1="54" y1="30" x2="50" y2="30" stroke="#0B1F44" stroke-width="1.5" />
+    <line x1="30" y1="30" x2="18" y2="30" stroke="#0B1F44" stroke-width="3" stroke-linecap="round" />
+    <line x1="30" y1="30" x2="30" y2="48" stroke="#0F5FEA" stroke-width="2" stroke-linecap="round" />
+    <circle cx="30" cy="30" r="3" fill="#0B1F44" />
+  </g>
+
+  <!-- Potted Plant - Right -->
+  <g transform="translate(260, 160)" filter="url(#m-soft-shadow-fallback)">
+    <ellipse cx="20" cy="90" rx="12" ry="4" fill="#DCE4F0" />
+    <path d="M10 90 L12 105 C13 108, 27 108, 28 105 L30 90 Z" fill="#FFFFFF" stroke="#DCE4F0" stroke-width="0.8" />
+    <path d="M17 90 C5 75, -5 45, 5 30 C11 38, 15 60, 19 75 Z" fill="#3B82F6" opacity="0.8" />
+    <path d="M20 90 C18 60, 12 25, 20 12 C25 22, 24 60, 21 75 Z" fill="#0F5FEA" />
+    <path d="M23 90 C33 75, 41 45, 35 30 C30 38, 26 60, 22 75 Z" fill="#1D4ED8" opacity="0.75" />
+  </g>
+
+  <!-- STANDING EMPLOYEE CHARACTER -->
+  <g transform="translate(160, 100)">
+    <ellipse cx="40" cy="150" rx="22" ry="5" fill="#DCE4F0" opacity="0.8" />
+    <rect x="31" y="105" width="7" height="45" rx="1.5" fill="#0B1F44" />
+    <rect x="42" y="105" width="7" height="45" rx="1.5" fill="#0B1F44" />
+    <path d="M29 149 C29 146, 38 146, 38 150 H30 Z" fill="#000000" />
+    <path d="M40 149 C40 146, 49 146, 49 150 H41 Z" fill="#000000" />
+    <path d="M24 50 C24 42, 56 42, 56 50 L58 105 C58 106, 22 106, 22 105 Z" fill="#0F5FEA" />
+    <rect x="36" y="34" width="6" height="8" fill="#FDBA74" />
+    <circle cx="39" cy="27" r="10" fill="#FDBA74" />
+    <path d="M29 24 C29 15, 49 15, 49 24 C49 17, 39 14, 29 24 Z" fill="#1E293B" />
+    <circle cx="36" cy="26" r="1" fill="#1E293B" />
+    <circle cx="42" cy="26" r="1" fill="#1E293B" />
+    <path d="M37 31 Q39 33 41 31" fill="none" stroke="#1E293B" stroke-width="1" stroke-linecap="round" />
+    <path d="M24 50 L14 70 L20 76 L28 56 Z" fill="#0F5FEA" />
+    <circle cx="14" cy="73" r="4" fill="#FDBA74" />
+    <rect x="10" y="65" width="7" height="12" rx="1.5" fill="#1E293B" transform="rotate(-10, 13, 70)" />
+    <rect x="11.5" y="66" width="4" height="10" rx="1" fill="#FFFFFF" transform="rotate(-10, 13, 70)" />
+    <path d="M56 50 L62 75 L56 90 L51 90 L54 70 L51 55 Z" fill="#0F5FEA" />
+  </g>
+
+</svg>
